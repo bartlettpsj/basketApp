@@ -7,8 +7,9 @@
     <div class="row mt-4" *ngFor="let item of basket.items">
       <div class="offset-0 col-md-2"><img [src]="item.image"/></div>
       <div class="col-md-1">{{item.qty}}</div>
-      <div class="col-md-5" >{{item.title}}</div>
+      <div class="col-md-4" >{{item.title}}</div>
       <div class="col-md-1">{{item.price | currency}}</div>
+      <div class="offset-1 col-md-2 small">{{getFlags(item)}}</div>
     </div>
   </div>
   <hr />

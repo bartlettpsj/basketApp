@@ -21,8 +21,7 @@ export class CartComponent implements OnInit {
 
   getFlags(item: Item) {
     const tax =  get(this.taxRules, item.category);
-    const flag =  get(item.category, '[0]');
-    console.log('Got item', item, tax, flag);
-    return flag + (item.imported ? ',i' : '');
+    const flag = `${item.category} sales tax applies at ${tax}%`;
+    return flag + (item.imported ? ', import duty applicable' : '');
   }
 }
