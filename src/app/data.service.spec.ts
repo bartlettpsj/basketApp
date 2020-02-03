@@ -13,5 +13,5 @@ describe('DataService', () => {
   it('should have 3 baskets', () => {
     const service: DataService = TestBed.get(DataService);
     expect(service.getBasketNames.length).toBe(3);
-  })
+  });
 });
