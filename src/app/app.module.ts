@@ -10,6 +10,7 @@ import { MainViewComponent } from './main-view/main-view.component';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { CartChooserComponent } from './cart-chooser/cart-chooser.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CartChooserComponent } from './cart-chooser/cart-chooser.component';
     MainViewComponent,
     CartComponent,
     HomeComponent,
-    CartChooserComponent
+    CartChooserComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
