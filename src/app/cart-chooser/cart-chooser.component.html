@@ -1,4 +1,5 @@
-<label class="basketLabel">Basket:</label>
+<div class="m-4">
+<label class="basketLabel mr-1">Basket: </label>
 
 <select formControlName="basketName" (change)="changeBasket($event)">
   <option value="">Choose basket</option>
@@ -6,3 +7,4 @@
 </select>
 
 <app-cart [basket]="basket"></app-cart>
+</div>
