@@ -70,7 +70,7 @@
         "price": 10.00,
         "category": "standard",
         "imported": true,
-        "imageUrl": "https://i5.walmartimages.com/asr/b819d3ff-f5c7-43af-9b6b-502e95126638_1.6497fcdce1f3c702aff4e7c2aa773996.jpeg?odnWidth=100&odnHeight=100&odnBg=FFFFFF"
+        "image": "https://i5.walmartimages.com/asr/b819d3ff-f5c7-43af-9b6b-502e95126638_1.6497fcdce1f3c702aff4e7c2aa773996.jpeg?odnWidth=100&odnHeight=100&odnBg=FFFFFF"
       },
       {
         "qty": 1,

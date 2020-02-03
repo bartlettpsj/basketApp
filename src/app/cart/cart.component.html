@@ -1,11 +1,18 @@
-
-
-<p>This is the cart component!</p>
-
-<div *ngIf="basket">
-  Name:  {{basket.name}}
-  <ul>
-    <li *ngFor="let item of basket.items">{{item.title}}</li>
-  </ul>
+<div *ngIf="basket; else noBasket">
+  <div class="container-fluid">
+    <div class="row" *ngFor="let item of basket.items">
+      <div class="offset-1 col-md-2"><img [src]="item.image"/></div>
+      <div class="col-md-1">{{item.qty}}</div>
+      <div class="col-md-5" >{{item.title}}</div>
+      <div class="col-md-1">{{item.price | currency}}</div>
+    </div>
+  </div>
 </div>
+
+<!--Demonstrate ngelse-->
+<ng-template #noBasket>
+  <div class="container-fluid">
+  No basket selected, please choose a basket
+  </div>
+</ng-template>
 

@@ -14,6 +14,7 @@ export interface Item {
   price: number;
   category: string; // need to make enum
   imported?: boolean;
+  image: string;
 }
 
 export interface TaxRule {
@@ -40,7 +41,7 @@ export class DataService {
     return find(baskets, basket => basket.name === name);
   }
 
-  getTaxRules(): TaxRule[] {
+  getTaxRules() {
     return taxRules;
   }
 }

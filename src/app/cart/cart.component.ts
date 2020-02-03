@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Basket, DataService} from '../data.service';
+import {Basket, Item, DataService} from '../data.service';
+import { get } from 'lodash';
 
 
 @Component({
@@ -10,21 +11,18 @@ import {Basket, DataService} from '../data.service';
 export class CartComponent implements OnInit {
   @Input() basket: Basket;
 
-  // private baskets: Basket[];
-  // basketNames: string[];
+  private taxRules; //: TaxRule[];
 
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    // this.baskets = this.dataService.getAllBaskets();
-    // console.log('Baskets', this.baskets);
-    // this.basketNames = this.dataService.getBasketNames();
-    // console.log('Name:', this.basketNames);
-    // console.log('Basket 1 is: ', this.dataService.getBasketByName('Basket 1'));
-    console.log('Basket Passed input', this.basket);
+    this.taxRules = this.dataService.getTaxRules();
   }
 
-  changeBasket(event) {
-    console.log('On change basket event', event.target.value);
+  getFlags(item: Item) {
+    const tax =  get(this.taxRules, item.category);
+    const flag =  get(item.category, '[0]');
+    console.log('Got item', item, tax, flag);
+    return flag + (item.imported ? ',i' : '');
   }
 }
