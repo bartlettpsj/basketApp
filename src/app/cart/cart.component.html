@@ -1,2 +1,11 @@
+
+
 <p>This is the cart component!</p>
-selector for basket
+
+<div *ngIf="basket">
+  Name:  {{basket.name}}
+  <ul>
+    <li *ngFor="let item of basket.items">{{item.title}}</li>
+  </ul>
+</div>
+
