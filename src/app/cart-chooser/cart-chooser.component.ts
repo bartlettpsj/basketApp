@@ -21,7 +21,7 @@ export class CartChooserComponent implements OnInit {
     // console.log('Name:', this.basketNames);
     // console.log('Basket 1 is: ', this.dataService.getBasketByName('Basket 1'));
     // Start with the first Basket
-    this.basket = this.dataService.getBasketByName(this.basketNames[0]);
+    // this.basket = this.dataService.getBasketByName(this.basketNames[0]);
   }
 
   changeBasket(event) {
