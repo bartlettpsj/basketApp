@@ -12,7 +12,7 @@ export interface Item {
   qty: number;
   title: string;
   price: number;
-  category: string; // need to make enum
+  category: string; // lookup in tax table
   imported?: boolean;
   image: string;
 }

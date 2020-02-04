@@ -15,11 +15,13 @@ export class CartChooserComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit() {
-    this.baskets = this.dataService.getAllBaskets();
-    console.log('Baskets', this.baskets);
+    // this.baskets = this.dataService.getAllBaskets();
+    // console.log('Baskets', this.baskets);
     this.basketNames = this.dataService.getBasketNames();
-    console.log('Name:', this.basketNames);
-    console.log('Basket 1 is: ', this.dataService.getBasketByName('Basket 1'));
+    // console.log('Name:', this.basketNames);
+    // console.log('Basket 1 is: ', this.dataService.getBasketByName('Basket 1'));
+    // Start with the first Basket
+    this.basket = this.dataService.getBasketByName(this.basketNames[0]);
   }
 
   changeBasket(event) {

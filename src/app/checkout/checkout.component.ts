@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {Basket} from '../data.service';
+import {Basket, DataService} from '../data.service';
+import {CalcService, BasketCalculated} from '../calc.service';
 
 @Component({
   selector: 'app-checkout',
@@ -8,12 +9,17 @@ import {Basket} from '../data.service';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
-  basket: Basket;
+  private basketCalculated: BasketCalculated;
 
-  constructor(public router: Router) { }
+  constructor(public calcService: CalcService) {
+  }
 
   ngOnInit() {
-    this.basket = window.history.state;
+    const basket = window.history.state;
+    console.log('Basket in Checkout', basket.name);
+    this.basketCalculated = this.calcService.calcBasket(basket);
+    console.log('Calculated Basket', this.basketCalculated);
+
   }
 
 }
